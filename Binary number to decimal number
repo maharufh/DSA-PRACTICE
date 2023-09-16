@@ -1,0 +1,29 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution {
+  public:
+    int binary_to_decimal( string binary ) {
+    int decimal{}, p{ binary.size()-1 };
+    for ( const char bit : binary )
+        decimal += bit == '1' ? 1 << p : 0, --p;
+    return decimal;
+}
+};
+
+//{ Driver Code Starts.
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        string str;
+        cin >> str;
+        Solution ob;
+        int ans = ob.binary_to_decimal(str);
+        cout << ans << "\n";
+    }
+    return 0;
+}
+// } Driver Code Ends
